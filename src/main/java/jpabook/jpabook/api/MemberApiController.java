@@ -114,6 +114,7 @@ public class MemberApiController {
 		
 		private String name;
 		
+		
 	
 		
 	}
@@ -124,6 +125,8 @@ public class MemberApiController {
 		private Long id ;
 		public CreateMemberResponse(Long id) {
 			this.id =id;
+			
+			
 		}
 	}
 }
