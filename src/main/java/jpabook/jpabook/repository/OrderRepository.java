@@ -71,7 +71,8 @@ public class OrderRepository {
 	//JPQL로 처리 실무에서 안쓰임
 	public List< Order> findAll(OrderSearch orderSearch){
 		//language=JPAQL
-		 String jpql = "select o From Order o join o.member m";
+		 String jpql = "select o From Order o join o.me"
+		 		+ "mber m";
 		 boolean isFirstCondition = true;
 		 
 		 //주문 상태 검색
@@ -107,8 +108,8 @@ public class OrderRepository {
 		}
 	public List<Order> findAllWithMemberDelivery() {
 		return	em.createQuery("select o from Order o"+
-					   " join fetch o.member m"+
-					   " join fetch o.delivery d", Order.class).getResultList();
+							   " join fetch o.member m"+
+							   " join fetch o.delivery d", Order.class).getResultList();
 		
 	}
 	
